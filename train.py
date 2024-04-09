@@ -16,7 +16,7 @@ from torch.nn import utils
 from base.framework_factory import load_framework
 import cv2
 
-
+from base.loss_compare import *
 
 torch.set_printoptions(precision=5)
 
@@ -37,9 +37,12 @@ def main():
     # print(config)
     # Loading datasets
 
-
+    print('train dataset######')
     train_loader = Train_Dataset(config) # get_loader(config)
 
+    compare_loss = SimMinLoss(metric='cos').cuda()
+
+    print('test dataset######')
     test_sets = OrderedDict()
     for set_name in config['vals']:
         test_sets[set_name] = Test_Dataset(name=set_name, config=config)
@@ -57,6 +60,7 @@ def main():
         
         if debug:
             test_model(model, test_sets, config, epoch)
+        
 
         st = time.time()
         loss_count = 0
@@ -73,7 +77,8 @@ def main():
         bar = Bar('{:10}-{:8} | epoch {:2}:'.format(net_name, config['sub'], epoch), max=iter_per_epoch)
 
         lamda = config['resdual']
-        #print("lamda:", lamda)
+        #lamda = 0.9
+        print("lamda:", lamda)
 
         #for i, pack in enumerate(train_loader, start=1):
         for i, idx_list in enumerate(index_list):
@@ -86,7 +91,8 @@ def main():
             images = images.cuda()
             gts = gts.cuda()
 
-
+            # print(images.max())
+            # print(gts.max())
             
             if config['multi']:
                 scales = [-1, 0, 1] 
@@ -96,9 +102,15 @@ def main():
                 images = F.upsample(images, size=(input_size, input_size), mode='bilinear', align_corners=True)
                 gts = F.upsample(gts, size=(input_size, input_size), mode='nearest')
             
-            Y = model(images, 'train')
-            loss = model_loss(Y, gts, config) / ave_batch            
+            Y = model(images, gts, 'train')
+            loss = model_loss(Y, gts, config) / ave_batch
+
+            loss_compare = compare_loss(Y['bg_v'],Y['fg_v'])
+            
+            loss_count += loss_compare.data #loss.data
             loss_count += loss.data
+
+            loss = loss + loss_compare
             loss.backward()
 
             batch_idx += 1
