@@ -1,6 +1,7 @@
 # Seamless-Detection
 This is the code for Seamless Detection.
-The details will upload soon!
+The details will be updated soon.
+Thanks for attention.
 
 # Introduction
 We make the first study to unify SOD and COD in a task agnostic framework via a contrastive distillation paradigm, inspired by their agreeable nature of binary segmentation.Details are illustrated in our paper:''Seamless Detection: Unifying Salient Object Detection and Camouflaged Object Detection''
