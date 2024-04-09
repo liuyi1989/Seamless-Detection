@@ -82,7 +82,6 @@ class Train_Dataset(data.Dataset):
 
         self.images_list, self.gts_list = get_image_list(config['trset'], config, 'train')
         self.size = len(self.images_list)
-        print(self.size)
 
         if config['stage'] == 2:
             self.images, self.gts = self.load_data()
@@ -115,7 +114,6 @@ class Train_Dataset(data.Dataset):
         images = []
         gts = []
         for idx in range(self.size):
-            #print(idx)
             image, gt = self.__getitem__(idx)
             images.append(image)
             gts.append(gt)
