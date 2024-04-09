@@ -47,7 +47,7 @@ def get_image_list(name, config, phase):
     print(tag)
     gt_root = os.path.join(config['data_path'], name, tag)
 
-    images = sorted([os.path.join(image_root, f) for f in os.listdir(image_root) if f.endswith('.png')]) ######.jpg
+    images = sorted([os.path.join(image_root, f) for f in os.listdir(image_root) if f.endswith('.jpg')]) ######.jpg
     gts = sorted([os.path.join(gt_root, f) for f in os.listdir(gt_root) if f.endswith('.png')])
 
     return images, gts
