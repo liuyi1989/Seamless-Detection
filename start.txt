@@ -1,0 +1,28 @@
+
+
+python train_compare.py \
+cornet_compare \
+--gpus=5 \
+--save \
+--found \
+--vals=ECSSD
+
+python test.py \
+cornet_compare \
+--weight="./weight/cornet_compare/resnet/base/cornet_compare_base_24.pth" \
+--gpus=5 \
+--save \
+--vals=ECSSD,DUTS-TE,DUT-OMRON,PASCAL-S
+
+
+python crf.py MSB-TR --gpus=4
+
+python test_param.py cornet_itsd
+
+python test_speed.py \
+cornet_compare \
+--weight="./weight/cornet_compare/resnet/base/cornet_compare_base_32.pth" \
+--gpus=5 \
+--vals=ECSSD 
+
+
