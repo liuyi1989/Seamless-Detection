@@ -4,7 +4,7 @@ The details will be updated soon.
 Thanks for attention.
 
 # Introduction
-We make the first study to unify SOD and COD in a task agnostic framework via a contrastive distillation paradigm, inspired by their agreeable nature of binary segmentation.Details are illustrated in our paper:''Seamless Detection: Unifying Salient Object Detection and Camouflaged Object Detection''
+We make the first study to unify SOD and COD in a task agnostic framework via a contrastive distillation paradigm, inspired by their agreeable nature of binary segmentation.Details are illustrated in our paper:''Seamless Detection: Unifying Salient Object Detection and Camouflaged Object Detection''.
 
 # Update 2024/04/09
 Code is available now!
