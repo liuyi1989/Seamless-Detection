@@ -7,9 +7,25 @@ We make the study to unify SOD and COD in a task-agnostic framework via a contra
 - [16.12.2024] Paper is now available on arXiv !
 - [04.9.2024] We have released the code and model checkpoints for Seamless-Detection !
 # Quick Start
-Code is available now!
 
-Pretrained backbone:[MoCo-v2](https://github.com/facebookresearch/moco).
+- Pretrained backbone:[MoCo-v2](https://github.com/facebookresearch/moco).
+
+- Training
+```python
+python train_compare.py \
+cornet_compare \
+--gpus=0 \
+--save \
+--found \
+--vals=ECSSD
+
+- Test
+python test.py \
+cornet_compare \
+--weight="./weight/cornet_compare/resnet/base/cornet_compare_base_24.pth" \
+--gpus=0 \
+--save \
+--vals=ECSSD,DUTS-TE,DUT-OMRON,PASCAL-S
 
 # Requirements
 python 3.9
@@ -17,6 +33,9 @@ python 3.9
 pytorch 1.11.0
 
 tensorboardX 2.5
+
+# Weights and Results
+Baidu | 提取码:sldt
 
 # Citation
 If you find Seamless-Detection to be useful for your work, please consider citing our paper:
