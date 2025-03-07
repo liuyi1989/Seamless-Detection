@@ -1,10 +1,11 @@
 # Seamless-Detection
-![示例图片](assert/illustration.jpg)
+![illustration](assert/illustration.jpg)
 We make the study to unify SOD and COD in a task-agnostic framework via a contrastive distillation paradigm, inspired by their agreeable nature of binary segmentation.
 
-# Introduction
-We make the first study to unify SOD and COD in a task agnostic framework via a contrastive distillation paradigm, inspired by their agreeable nature of binary segmentation.Details are illustrated in our paper:''Seamless Detection: Unifying Salient Object Detection and Camouflaged Object Detection''.
-
+# 💥 News 💥
+- [13.2.2025] [Seamless-Detection](https://www.sciencedirect.com/science/article/abs/pii/S0957417425005342) has been accepted to ESWA 2025 !
+- [16.12.2024] Paper is now available on arXiv !
+- [04.9.2024] We have released the code and model checkpoints for Seamless-Detection !
 # Update 2024/04/09
 Code is available now!
 
