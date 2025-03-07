@@ -36,7 +36,7 @@ pytorch 1.11.0
 tensorboardX 2.5
 
 # Weights and Results
-Baidu | 提取码:sldt
+Baidu | 提取码:[sldt](https://pan.baidu.com/s/1_S4I-HB-ZwZobPA8MzsjVg)
 
 # Citation
 If you find Seamless-Detection to be useful for your work, please consider citing our paper:
