@@ -18,15 +18,16 @@ cornet_compare \
 --save \
 --found \
 --vals=ECSSD
-
+```
 - Test
+```
 python test.py \
 cornet_compare \
 --weight="./weight/cornet_compare/resnet/base/cornet_compare_base_24.pth" \
 --gpus=0 \
 --save \
 --vals=ECSSD,DUTS-TE,DUT-OMRON,PASCAL-S
-
+```
 # Requirements
 python 3.9
 
