@@ -21,11 +21,11 @@ tensorboardX 2.5
 # Citation
 If you find Seamless-Detection to be useful for your work, please consider citing our paper:
 
-> @article{liu2025seamless,
->   title={Seamless Detection: Unifying Salient Object Detection and Camouflaged Object Detection},
->   author={Liu, Yi and Li, Chengxin and Dong, Xiaohui and Li, Lei and Zhang, Dingwen and Xu, Shoukun and Han, Jungong},
->   journal={Expert Systems with Applications},
->   pages={126912},
->   year={2025},
->   publisher={Elsevier}
-> }
+` @article{liu2025seamless,
+   title={Seamless Detection: Unifying Salient Object Detection and Camouflaged Object Detection},
+   author={Liu, Yi and Li, Chengxin and Dong, Xiaohui and Li, Lei and Zhang, Dingwen and Xu, Shoukun and Han, Jungong},
+   journal={Expert Systems with Applications},
+   pages={126912},
+   year={2025},
+   publisher={Elsevier}
+` }
